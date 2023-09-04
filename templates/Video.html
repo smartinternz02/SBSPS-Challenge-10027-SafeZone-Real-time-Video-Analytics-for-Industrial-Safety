@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Video</title>
+    <style>
+        body{
+            color:white;
+            background-color:rgb(216, 217, 218);
+            margin:0px;
+            padding:0px;
+        }
+        header.feature-box.top{
+        background-color:rgb(39, 40, 41);
+        height:50px;
+        margin:0px;
+        padding:10px;
+        text-align:center;
+        }
+        h1{
+        margin:0px;
+        }
+        header.feature-box.second{
+        background-color:rgb(97, 103, 122);
+        height:40px;
+        text-align:center;
+        margin-top:-25px;
+        margin-bottom: 10px;
+        }
+        .features{
+          background-color:rgb(39, 40, 41);
+          width: 900px;
+          height: 700px;
+          border-radius: 35px;
+          object-fit: contain;
+          margin:20px;
+        }
+        section.col-sm{
+          background-color:rgb(39, 40, 41);
+          width: 800px;
+          height: 500px;
+          border-radius: 35px;
+          object-fit: contain;
+          margin: auto;
+        }
+
+        img{
+          width: 750px;
+          height: 450px;
+          border-radius: 35px;
+          object-fit: contain;
+          margin: 40px;
+        }
+
+        .new{
+        color:black;
+        margin:0px;
+        padding:20px;
+        background-color:rgb(255, 246, 224);
+        margin:0px;
+        margin-top:10px;
+        }
+
+    </style>
+</head>
+<body>
+<header class="feature-box top">
+    <h1><strong>Object Detection using YOLOv8</strong></h1>
+</header>
+<header class="feature-box second">
+     <h1><strong>Output Video</strong></h1>
+</header>
+
+<section class="col-sm " >
+    <img src="{{ url_for('video') }}"   alt="Upload video">
+</section>
+<section>
+    <div class="new" >
+      <form method = 'POST' enctype="multipart/form-data" style="align-content: center; text-align: center;display: flex;">
+        {{form.hidden_tag()}}
+        {{form.file(class_="custom-file-input")}}
+
+        <div>
+        <button type="submit" name="favorite" value="x" class="btnCustom">
+            Submit
+        </button>
+      </div>
+      </form>
+    </div>
+</section>
+
+</body>
+</html>
